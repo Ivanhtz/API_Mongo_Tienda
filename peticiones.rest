@@ -1,0 +1,72 @@
+
+// PRODUCTOS
+
+// Trae todos los productos
+GET http://localhost:3000/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzlhMGNiNzJlODNmYjI4YTcxMzUxZTEiLCJyb2xlIjoicmVndWxhciIsImlhdCI6MTY3MTA0NTk2OX0.cc0AHjAqeRRDe1wn7kGJxVjBCXw4MGVgwXDsAuMpO-o
+
+###
+// Trae un producto por id
+GET http://localhost:3000/api/products/633be6d9e4c87f48c058b874
+
+###
+// Trae un producto por departamento
+GET http://localhost:3000/api/products/dpto/Alimentación
+
+###
+// Trae un producto cuando el precio sea mayor que...
+GET http://localhost:3000/api/products/pr/80
+
+###
+// Introduce un producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "Café",
+    "description": "100% Arábico",
+    "price": 50,
+    "department": "Alimentación",
+    "available": true,
+    "stock": 10
+}
+
+###
+// Modifica producto
+PUT http://localhost:3000/api/products/633be6d9e4c87f48c058b874
+Content-Type: application/json
+
+{
+    "description": "Pica y tritura huesos"
+}
+
+// USUARIOS
+
+###
+// Traemos el perfil de un usuario registrado
+GET http://localhost:3000/api/users/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzlhMGNiNzJlODNmYjI4YTcxMzUxZTEiLCJyb2xlIjoicmVndWxhciIsImlhdCI6MTY3MTA5MzIxMn0.oGqXASyHr7RPPicCVnK2oHCGomTWZSy-gDKS_FgjKu8
+
+###
+// Registra usuarios
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "username": "Teresa",
+    "email": "tere@hotmail.com",
+    "password": "123",
+    "active": true
+}
+
+###
+// Comprueba si un usuario está registrado
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+   
+    "email": "tere@hotmail.com",
+    "password": "123"
+    
+}
